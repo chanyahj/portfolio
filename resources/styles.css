@@ -1,3 +1,6 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{
     margin: 0;
     padding: 0;
@@ -73,6 +76,7 @@ nav ul li a::after{
      border-bottom: solid 4px black;
      border-right: solid 4px black;
      flex: 0 0 20%;
+     padding: 50px;
  }
  .about-me{
      flex: 0 0 60%;
@@ -84,10 +88,13 @@ nav ul li a::after{
       text-align: center;
  }
  .about-me p{
-     font-size: 20px;
+     font-size: 17px;
      padding-left: 10px;
      text-align: center;
 
+ }
+ footer p{
+     text-align: center;
  }
 .contacts{
     text-align: center;

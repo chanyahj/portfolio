@@ -28,7 +28,7 @@
 
     <div class="side-bar">
         <h3 style="text-align: center">Contact Form</h3>
-        <form action=" " method="post">
+        <form action="https://formspree.io/f/xdoqzpay" method="post">
             <p>
             <label for="first">First Name: </label>
             <input class ="required"  type="text" id="first" required>
@@ -65,6 +65,7 @@
             which are both clubs where students of all backgrounds, specifically students who feel underrepresented in
             the field of technology,
             to come together and build connections.
+            <br>
             I am currently pursuing a career in Software Development. As of right now, I am working as a learning
             assistant in the College of IST.
             Currently in my job as a Learning Assistant for the Introduction to Application Development course in the
@@ -81,8 +82,33 @@
         Some of my favorite shows include Glee, Greys Anatomy, and Big Bang Theory. My favorite music artists include
             Beyonce, Drake, and The Weeknd. Some of my favorite activities include bowling, Topgolf, and going to the arcade. </p>
     </div>
+    <div id="apiDisplay">
+        <script>
+            const div = document.getElementById("apiDisplay");
+            const url="https://icanhazdadjoke.com/";
+
+            const headers=new Headers({
+                'Accept': 'application/json'
+            });
+
+            fetch(url, {headers})
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) =>{
+                    console.log(data)
+                    let p=document.createElement("p");
+                    p.innerHTML = `${data.joke}`
+                    div.appendChild(p);
+                })
+                .catch(function (error){
+                    console.log(error)
+            })
+        </script>
+    </div>
 </main>
 <footer>
+    <p style="color: white"  >&copy;Chanyah Johnson<br>Penn State University, University Park,PA, 16802</p>
     <nav class="contacts">
         <ul>
             <li><a target="_blank" href=" ">LinkedIn | </a></li>
