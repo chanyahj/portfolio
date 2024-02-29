@@ -90,7 +90,7 @@ nav ul li a::after{
  .about-me p{
      font-size: 17px;
      padding-left: 10px;
-     text-align: center;
+     text-align: left;
 
  }
  footer p{
