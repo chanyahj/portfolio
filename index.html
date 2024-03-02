@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Chanyah's Portfolio</title>
     <link href="resources/styles.css" rel="stylesheet">
+    <script src="resources/script.js"></script>
 </head>
 <body>
 <header>
     <div class="introduction">
-        <img src="resources/ChanTech.png" width="10px" height="100px" alt="ladybug">
+<img src="resources/ChanTech.png" rel="ladybug" width="50" height="100" >
         <h1>Chanyah Johnson</h1>
     <nav>
         <ul>
@@ -23,11 +24,11 @@
 
     </div>
 </header>
-<h2 style="display: block" >About Me</h2>
-<main>
 
+<main>
     <div class="side-bar">
-        <h3 style="text-align: center">Contact Form</h3>
+        <div class="form">
+        <h3 style="text-align: center">Contact Me!</h3>
         <form action="https://formspree.io/f/xdoqzpay" method="post">
             <p>
             <label for="first">First Name: </label>
@@ -53,19 +54,43 @@
             <input type="submit" value="Submit">
             </p>
         </form>
+        </div>
+        <div id="apiDisplay">
+            <script>
+                const div = document.getElementById("apiDisplay");
+                const url="https://icanhazdadjoke.com/";
+
+                const headers=new Headers({
+                    'Accept': 'application/json'
+                });
+
+                fetch(url, {headers})
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((data) =>{
+                        console.log(data)
+                        let p=document.createElement("p");
+                        p.innerHTML = `Refresh for new dad joke: ${data.joke}`
+                        div.appendChild(p);
+                    })
+                    .catch(function (error){
+                        console.log(error)
+                    })
+            </script>
+        </div>
     </div>
     <div class="about-me">
+
+       <h2 style="font-weight: normal">Welcome!</h2>
         <img src="resources/IMG_3611.jpg" alt="picture of Chanyah Johnson at HS Graduation" width="300" height="350">
+        <img src="resources/53527976170_e57ec569db_o.jpg" alt="picture of Chanyah at summit" width="500" height="350">
         <p>Hello! I am Chanyah Johnson and welcome to my page.
             I am a sophmore at Penn State's Main Campus majoring in Human-Centered Design and Development with a
-        focus in Informatics.  My major has equipped me with a wide range of technical, design, and teamwork skills. In past projects I have
+            minor in Security and Risk Analysis.  My major has equipped me with a wide range of technical, design, and teamwork skills. In past projects I have
             worked to create prototypes for apps in group projects as well as
-            doing some back-end work on applications as well. Additionally, I am pursuing a minor in Security Risk and Analysis. As far as involvement I
-            am mainly involved in two organizations here at Penn State which are the National Society of Black Engineers and WIRED-In
-            which are both clubs where students of all backgrounds, specifically students who feel underrepresented in
-            the field of technology,
-            to come together and build connections.
-            </p>
+            doing some front end and back-end work on applications as well. .
+        </p>
         <p>
             I am currently pursuing a career in Software Development. As of right now, I am working as a learning
             assistant in the College of IST.
@@ -79,34 +104,137 @@
             These suggestions have allowed me to be able to help the students in areas they were struggling as well as encouraged them to seek help in my office hours.
             The very little suggestions that I, or even the other LAs may come up with, helps to improve the overall learning of the course for the students which I am proud to share.
         </p>
-            <p>I am originally
-        from Philadelphia, Pennsylvania.  In my freetime, I like to watch TV, listen to music, and take part in fun activities.
-        Some of my favorite shows include Glee, Greys Anatomy, and Big Bang Theory. My favorite music artists include
+        <p>I am originally
+            from Philadelphia, Pennsylvania.  In my freetime, I like to watch TV, listen to music, and take part in fun activities.
+            Some of my favorite shows include Glee, Greys Anatomy, and Big Bang Theory. My favorite music artists include
             Beyonce, Drake, and The Weeknd. Some of my favorite activities include bowling, Topgolf, and going to the arcade. </p>
-    </div>
-    <div id="apiDisplay">
-        <script>
-            const div = document.getElementById("apiDisplay");
-            const url="https://icanhazdadjoke.com/";
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Skills')">Skills</button>
+            <button class="tablinks" onclick="openTab(event, 'Education')">Education</button>
+            <button class="tablinks" onclick="openTab(event, 'Experience')">Work Experience/Extracurriculars</button>
+        </div>
 
-            const headers=new Headers({
-                'Accept': 'application/json'
-            });
+        <!-- Tab content-->
+        <div id="Skills" class="tabcontent">
+            <br>
+            <br>
+            <table>
+                <tbody>
+                <tr><th>Languages</th>
+                    <td>
+                        <ul>
+                            <li>Java</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                        </ul>
+                </tr>
+                <tr><th>Platforms</th>
+                    <td>
+                        <ul>
+                            <li>Figma</li>
+                            <li>JetBrains IDEs</li>
+                            <li>VS Code</li>
+                            <li>MySQL</li>
+                            <li>MS 365</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-            fetch(url, {headers})
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) =>{
-                    console.log(data)
-                    let p=document.createElement("p");
-                    p.innerHTML = `Refresh for new dad joke: ${data.joke}`
-                    div.appendChild(p);
-                })
-                .catch(function (error){
-                    console.log(error)
-            })
-        </script>
+        <div id="Education" class="tabcontent">
+            <br>
+            <br>
+            <h2>About My Major</h2>
+            <p style="text-align: center">B.S. Human-Centered Design and Development, Minor in Security and Risk Analysis</p>
+            <p>Human-Centered Design and Development is the study of how to identify, design, build, and
+                evaluate technologies to enhance people’s lives. The field focuses on understanding people
+                and their use of technology, the methods and tools used for designing and building
+                effective technology solutions, and the modern information technologies used to create
+                effective solutions. The field involves working with potential users and customers to
+                understand their needs and unique contexts, and then how to design, build, and evaluate
+                impactful products and services. Human-centered design and development integrates ideas
+                from design thinking, human-computer interaction (HCI), interaction design,
+                and user experience design with the skills and techniques needed for software development.</p>
+            <h2>About my Minor</h2>
+            <p style="text-align: center">Minor: Security and Risk Analysis</p>
+            <p>Security and risk analysis is a field that explores the integrated processes conducted to
+                provide decision-makers with the information needed to understand factors that can
+                negatively influence operations and outcomes, and make informed judgments concerning
+                the extent of actions needed to reduce vulnerabilities, protect resources, and optimize
+                investments. Security and risk analysis is a field of practice with two blended
+                concentration areas: </p>
+            <ol>
+                <li> Security, which seeks to identify, understand, and analyze
+                    critical local, national and international security issues</li>
+                <li> Risk, which includes risk assessment, risk characterization, risk communication,
+                    risk management, and the formulation of risk policy.</li>
+            </ol>
+          <p>  In practice,
+            the issues and processes for conducting of security and risk analytics are
+            neither separate nor sequential. To be effective,
+            the issues of security and risk must be addressed concurrently and synergistically.</p>
+        </div>
+
+        <div id="Experience" class="tabcontent">
+            <br>
+            <br>
+            <h2>Work Experience</h2>
+            <div class="work-experience">
+                <div class="job-title">Learning Assistant | Penn State College of IST</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Assisted professor and students in the classroom</li>
+                        <li>Held office hours to give students additional help outside the classroom</li>
+                    </ul>
+                </div>
+                <div class="job-dates">August 2023-Present</div>
+                <div></div>
+
+                <div class="job-title">Computer Science Instructor | Heights</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Taught Java to Philadelphia High School Students during a six-week
+                            summer course to prepared Students for the AP CS Exam</li>
+                    </ul>
+                </div>
+                <div class="job-dates">June 2023-August 2023</div>
+                <div></div>
+            </div>
+            <h2>Student Organizations and Clubs</h2>
+            <div class="organizations">
+                <div class="job-title">Scholar | IST Scholars</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Connect with other scholarship recipients in the College of IST</li>
+                        <li>Learn how to successfully prepare for our professional career</li>
+                    </ul>
+                </div>
+                <div class="job-dates">September 2023-Present</div>
+                <div></div>
+                <div class="job-title">Member | National Society of Black Engineers</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Connect with underrepresented students across all
+                            fields of engineering to network and develop our professional careers</li>
+                    </ul>
+                </div>
+                <div class="job-dates">September 2023-Present</div>
+                <div></div>
+                <div class="job-title">Member | WIRED-IN</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Connect and network with underrepresented students in the College of IST</li>
+                        <li>Grow professionally through company visits and career workshops</li>
+                    </ul>
+                </div>
+                <div class="job-dates">January 2023-Present</div>
+                <div></div>
+            </div>
+        </div>
     </div>
 </main>
 <footer>
