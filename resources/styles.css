@@ -69,6 +69,7 @@ nav ul li a::after{
      width: 100%;
 
 }
+
  main{
      display: flex;
  }
@@ -86,6 +87,7 @@ nav ul li a::after{
      flex: 0 0 60%;
      text-align: center;
     font-size: 30px;
+     padding: 20px;
  }
   h2{
       text-align: center;
@@ -98,30 +100,36 @@ nav ul li a::after{
 .tab button {
     background-color:  white;
     float: left;
-    border-top: 4px solid red;
-    border-bottom: 4px solid red;
-    border-right: 2px solid red;
-    border-left: 2px solid red;
+    border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 20px;
+    position: relative;
+}
+.tab button::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left:0;
+    top: 10px;
+    transition: 0.5s;
+}
+.tab button:hover::after{
+    width: 100%;
 }
 
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: white;
-    border: 5px solid black;
-}
 
-/* Create an active/current tablink class */
+/* Create an active/current tablink class
 .tab button.active {
     background-color: black;
     color: white;
     border: none;
-}
+}*/
 
 /* Style the tab content */
 .tabcontent {
@@ -200,16 +208,17 @@ margin-left: auto;
     text-decoration: none;
     margin: auto;
     justify-content: center;
-    grid-template-rows: 20px 20px ;
-    grid-template-columns: 500px 500px;
-    grid-gap: 10px;
+    grid-template-rows: 20px 20px 20px 20px;
+    grid-template-columns: 300px 300px ;
+    grid-gap: 20px;
 }
 
 .organizations{
     margin: auto;
     justify-content: center;
     display: grid;
-    grid-template-rows: 20px 20px 20px;
-    grid-template-columns: 500px 500px;
-    grid-gap: 10px;
+    text-decoration: none;
+    grid-template-rows: 20px 20px 20px 20px 20px;
+    grid-template-columns: 300px 300px ;
+    grid-gap: 20px;
 }
