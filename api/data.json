@@ -3,7 +3,12 @@
     "title":"Marketplace",
     "date": "Developed Fall 2023",
     "description": "GUI with marketplace functionality",
-    "gitLink": "https://github.com/chanyahj/Marketplace"
+    "gitLink": "https://github.com/chanyahj/Marketplace",
+
+    "title":"Queue model",
+    "date": "Developed Spring 2023",
+    "description": "GUI with queue functionality",
+    "gitLink": "https://github.com/chanyahj/queueModel"
 
   }
 ]
