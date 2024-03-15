@@ -222,3 +222,16 @@ margin-left: auto;
     grid-template-columns: 300px 300px ;
     grid-gap: 20px;
 }
+.project-page{
+    display: flex;
+}
+.project-side{
+    flex: 0 0 20%;
+    padding: 20px;
+    margin-top: 50px;
+}
+.project-body{
+    flex: 0 0 80%;
+    padding: 20px;
+}
+
