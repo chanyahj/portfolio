@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZipCode Weather API</title>
+    <link href="resources/styles.css" rel="stylesheet">
+    <script src="resources/script.js"></script>
+</head>
+<body>
+<header>
+    <div class="introduction">
+        <img src="resources/ChanTech.png" rel="ladybug" width="50" height="100" >
+        <h1>Chanyah Johnson</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home | </a>  </li>
+                <li><a  href="projects.html">Projects  </a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
+<div>
+    <h1>Zip Code Weather Forecast</h1>
+    <h2>Description</h2>
+    <p>This project uses an open source API from <a href="https://openweathermap.org/api">Open Weather Map</a>
+        to predict the weather for the next 5 days for a given zipcode.</p>
+</div>
+<div>
+    <p>
+        <label for="zip">ZIP code:</label>
+        <input type="text" id="zip" maxlength="5">
+        <button id="search">Search</button>
+    </p>
+    <div id="forecast"></div>
+</div>
+<div id="weather">
+
+</div>
+</body>
+</html>
